@@ -31,12 +31,14 @@ for i in range(N):
 #Creamos los bordes de la matriz
 for i in range(1, N):
     #Cambian dependiendo del ejercicio
+    #las x son las i
     w[i][0] = 0
-    w[i][M] = 0
+    w[i][M] = i**2
 
 for j in range(1, M):
     #Cambian dependiendo del ejercicio
-    w[0][j] = 0
+    #las y son las j
+    w[0][j] = 1- j**2
     w[N][j] = 1
 
 
@@ -52,6 +54,8 @@ Ejemplo: Laplaciano, la A es el gradiente
 Au = 0 0<x<1, 0<y<1
 u(0,y) = u(x,0) = u(x,1) = 0
 u(1,y) = 1
+
+
 '''
 
 #Mostramos la grafica de la matriz
