@@ -1,4 +1,4 @@
-#metodo de Gauss Seiden
+#metodo de Gauss-Seiden
 
 #Extremos de x, y
 a = int(input("Ingrese el valor de a, x0: "))
@@ -33,12 +33,12 @@ for i in range(1, N):
     #Cambian dependiendo del ejercicio
     #las x son las i
     w[i][0] = 0
-    w[i][M] = i**2
+    w[i][M] = 0
 
 for j in range(1, M):
     #Cambian dependiendo del ejercicio
     #las y son las j
-    w[0][j] = 1- j**2
+    w[0][j] = 0
     w[N][j] = 1
 
 
@@ -47,15 +47,25 @@ for j in range(1, M):
 for k in range(100):#iteramos inicialmente 100, luego ya lo adapataremos
     for i in range(1, N):
         for j in range(1, M):
-            w[i][j] = ( k**2 * (w[i+1][j]+w[i-1][j])+ h**2*(w[i][j+1]+w[i][j-1]) - (h*k)**2 * f(i, j))/(2*(h**2+k**2))
+            w[i][j] = ( k**2 * (w[i+1][j]+w[i-1][j])+ h**2*(w[i][j+1]+w[i][j-1]) - (h*k)**2 * f(i, j))/(2*(h**2 + k**2))
             
 '''
-Ejemplo: Laplaciano, la A es el gradiente
+Eje1: Laplaciano, la A es el gradiente
 Au = 0 0<x<1, 0<y<1
 u(0,y) = u(x,0) = u(x,1) = 0
 u(1,y) = 1
 
+Eje2: Laplaciano, la A es el gradiente
+Au = 0 0<x<1, 0<y<1 
+u(x,0) = 0, u(x,1) = x**2
+u(0,y) = 1-y**2, u(1,y) = 1
 
+Eje3: Laplaciano, la A es el gradiente
+Au = 2u 0<x<1, 0<y<1
+u(0,y) = 0, u(1,y) = 1
+u(x,0) = 0, u(x,1) = 0
+
+#la u es la w 
 '''
 
 #Mostramos la grafica de la matriz
