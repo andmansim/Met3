@@ -33,12 +33,12 @@ for i in range(1, N):
     #Cambian dependiendo del ejercicio
     print(i)
     w[i][0] = 0
-    w[i][M] = 0
+    w[i][M-1] = 0
 
 for j in range(1, M):
     #Cambian dependiendo del ejercicio
     w[0][j] = 0
-    w[N][j] = 1
+    w[N-1][j] = 1
 
 
 
