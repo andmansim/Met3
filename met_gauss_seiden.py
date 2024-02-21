@@ -59,12 +59,22 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
+#definir coordenadas
 x = np.linspace(a, b, N+1)
 y = np.linspace(c, d, M+1)
 X, Y = np.meshgrid(x, y)
-ax.plot_surface(X, Y, w, cmap='viridis')
-plt.show()
+Z = np.array(w)
 
+#graficar
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X, Y, Z, cmap='viridis')
+
+#etiquetas
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+
+#mostramos
+plt.show()
 
