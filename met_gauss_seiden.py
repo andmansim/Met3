@@ -16,12 +16,12 @@ k = (d-c)/M
 
 #Matriz
 # Inicializar matriz w con dimensiones N x M
-w = [[0 for j in range(M)] for i in range(N)]
+w = [[0 for j in range(M+1)] for i in range(N+1)]
 
 
 #funcion
 def f(x, y):
-    return None
+    return 0
 
 #Rellenamos el resto de la matriz
 for i in range(N):
@@ -31,14 +31,13 @@ for i in range(N):
 #Creamos los bordes de la matriz
 for i in range(1, N):
     #Cambian dependiendo del ejercicio
-    print(i)
     w[i][0] = 0
-    w[i][M-1] = 0
+    w[i][M] = 0
 
 for j in range(1, M):
     #Cambian dependiendo del ejercicio
     w[0][j] = 0
-    w[N-1][j] = 1
+    w[N][j] = 1
 
 
 
@@ -54,3 +53,18 @@ Au = 0 0<x<1, 0<y<1
 u(0,y) = u(x,0) = u(x,1) = 0
 u(1,y) = 1
 '''
+
+#Mostramos la grafica de la matriz
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+x = np.linspace(a, b, N+1)
+y = np.linspace(c, d, M+1)
+X, Y = np.meshgrid(x, y)
+ax.plot_surface(X, Y, w, cmap='viridis')
+plt.show()
+
+
