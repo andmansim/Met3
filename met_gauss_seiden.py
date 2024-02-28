@@ -23,10 +23,6 @@ w = [[0 for j in range(M+1)] for i in range(N+1)]
 def f(x, y):
     return 0
 
-#Rellenamos el resto de la matriz
-for i in range(N):
-    for k in range(M):
-        w[i][k] = 0
 
 #Creamos los bordes de la matriz
 for i in range(1, N):
