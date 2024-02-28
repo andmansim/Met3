@@ -52,8 +52,8 @@ for o in range(100):#iteramos inicialmente 100, luego ya lo adapataremos
 '''
 Tenemos que modificar la wij, la función va a seguir = 0. 
 
-Eje3: ec de Helmhotz
-Au + lambdau = 0 0<x<1, 0<y<1
+Eje3: ec de Helmhotz, l es lambda
+Au + lu = 0 0<x<1, 0<y<1, da igual si pones lu a un lado o al otro
 u(0,y) = 0, u(1,y) = 1
 u(x,0) = 0, u(x,1) = 0
 l = 1
