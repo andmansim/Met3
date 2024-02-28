@@ -46,7 +46,7 @@ for o in range(100):#iteramos inicialmente 100, luego ya lo adapataremos
             w[i][j] = ( k**2 * (w[i+1][j]+w[i-1][j])+ h**2*(w[i][j+1]+w[i][j-1]) - (h*k)**2 * f(i, j))/(2*(h**2 + k**2))
             
 '''
-Eje1: Laplaciano, la A es el gradiente
+Eje1: Laplaciano, la A es la divergencia del gradiente, la A = gradiente ^2
 Au = 0 0<x<1, 0<y<1
 u(0,y) = u(x,0) = u(x,1) = 0
 u(1,y) = 1
