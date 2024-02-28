@@ -1,17 +1,18 @@
 #metodo de Gauss-Seiden
-import numpy as np
+
 #Extremos de x, y
 a = int(input("Ingrese el valor de a, x0: "))
 b = int(input("Ingrese el valor de b, xf: "))
 c = int(input("Ingrese el valor de c, y0: "))
 d = int(input("Ingrese el valor de d, yf: "))
 
+l = int(input("Ingrese el valor de l, lambda: "))
+
 #Número de huecos de x, y. Los elegimos nosotros
 N = int(input("Ingrese el número de huecos de X: "))
 M = int(input("Ingrese el número de huecos de Y: "))
 
-b = np.pi
-d = np.pi
+
 #Tamaño de los huecos
 h = (b-a)/N
 k = (d-c)/M 
@@ -37,8 +38,8 @@ for i in range(1, N):
 for j in range(1, M):
     #Cambian dependiendo del ejercicio
     #las y = (c+j*k)
-    w[0][j] = (c+j*k)
-    w[N][j] = (c+j*k)
+    w[0][j] = 0
+    w[N][j] = 1
 
 
 
@@ -46,40 +47,18 @@ for j in range(1, M):
 for o in range(100):#iteramos inicialmente 100, luego ya lo adapataremos
     for i in range(1, N):
         for j in range(1, M):
-            w[i][j] = ( k**2 * (w[i+1][j] + w[i-1][j])+ h**2 * (w[i][j+1] + w[i][j-1]) - (h*k)**2 * f(i, j))/(2*(h**2 + k**2))
+            w[i][j] = ( k**2 * (w[i+1][j] + w[i-1][j])+ h**2 * (w[i][j+1] + w[i][j-1]) - (h*k)**2 * f(i, j))/(2*(h**2 + k**2) + (k*k*l)**2)
             
 '''
-Nos va a preguntar la interpretación gráfica de las EDP
-El laplaciano minimiza la energía, es decir, el calor se va a ir a los bordes. 
-Un ejemplo de esto es una lona estirada, donde al tensionar dandole una forma no horizontal, 
-esta se quede da una forma que minimiza la energía. 
-Las series de fourier extendienden la solución, hay que tener cuidadito. 
+Tenemos que modificar la wij, la función va a seguir = 0. 
 
-Eje1: Laplaciano, la A es la divergencia del gradiente, la A = gradiente ^2
-Au = 0 0<x<1, 0<y<1
-u(0,y) = u(x,0) = u(x,1) = 0
-u(1,y) = 1
-
-Eje2: Laplaciano, la A es el gradiente
-Au = 0 0<x<1, 0<y<1 
-u(x,0) = 0, u(x,1) = x**2
-u(0,y) = 1-y**2, u(1,y) = 1
-
-Eje3: Laplaciano, la A es el gradiente
-Au = 2u 0<x<1, 0<y<1
+Eje3: ec de Helmhotz
+Au + lambdau = 0 0<x<1, 0<y<1
 u(0,y) = 0, u(1,y) = 1
 u(x,0) = 0, u(x,1) = 0
-
-#la u es la w 
-Eje 4: Ecuación de Poisson
-Au = xy(1-x)(1-y) 0<x<1, 0<y<1
-u(0,y) = 0, u(1,y) = 0
-u(x,0) = 0, u(x,1) = 0
-
-Eje5: Laplaciano
-Au = 0 0<x<pi, 0<y<pi
-u(0,y) = 0, u(pi,y) = 0
-u(x,0) = y, u(x,pi) = y
+l = 1
+l = 300
+l = 1000 
 
 '''
 
