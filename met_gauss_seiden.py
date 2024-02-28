@@ -20,8 +20,10 @@ w = [[0 for j in range(M+1)] for i in range(N+1)]
 
 
 #funcion
-def f(x, y):
-    return 0
+def f(i, j):
+    #las x = (a+i*h)
+    #las y = (c+j*k)
+    return (a+i*h)*(c+j*k)*(1-(a+i*h))*(1-(c+j*k))
 
 
 #Creamos los bordes de la matriz
@@ -29,13 +31,13 @@ for i in range(1, N):
     #Cambian dependiendo del ejercicio
     #las x = (a+i*h)
     w[i][0] = 0
-    w[i][M] = (a+i*h)**2
+    w[i][M] = 0
 
 for j in range(1, M):
     #Cambian dependiendo del ejercicio
     #las y = (c+j*k)
-    w[0][j] = 1-(c+k*j)**2
-    w[N][j] = 1
+    w[0][j] = 0
+    w[N][j] = 0
 
 
 
@@ -66,6 +68,10 @@ u(0,y) = 0, u(1,y) = 1
 u(x,0) = 0, u(x,1) = 0
 
 #la u es la w 
+Eje 4: Ecuación de Poisson
+Au = xy(1-x)(1-y) 0<x<1, 0<y<1
+u(0,y) = 0, u(1,y) = 0
+u(x,0) = 0, u(x,1) = 0
 '''
 
 #Mostramos la grafica de la matriz
