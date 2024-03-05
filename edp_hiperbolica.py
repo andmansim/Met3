@@ -5,17 +5,17 @@ import numpy as np
 a = 0
 b = int(input("Ingrese el valor de b, xf: "))
 c = 0 
-d = int(input("Ingrese el valor de d, yf: "))
+d = int(input("Ingrese el valor de d, tf: "))
 #velocidad
-v = int(input("Ingrese la velocidad: "))
+v = float(input("Ingrese la velocidad: "))
 #Número de huecos de x, y. Los elegimos nosotros
 N = int(input("Ingrese el número de huecos de X: "))
-M = int(input("Ingrese el número de huecos de Y: "))
+M = int(input("Ingrese el número de huecos de T: "))
 
 
 #Tamaño de los huecos
-h = (b)/N
-k = (d)/M 
+h = b/N
+k = d/M 
 p = v*h/k #para no escribir todo esto abajo
 
 #Matriz
@@ -26,7 +26,8 @@ w = [[0 for j in range(M+1)] for i in range(N+1)]
 #funcion inicial y de frontera
 def f(x):
     #Cambia dependiendo del ejercicio
-    return 0
+    #x = (a+i*h)
+    return x*(b-x)
 
 def g(x):  
     #Cambia dependiendo del ejercicio
@@ -51,6 +52,11 @@ for i in range(1, N):
         w[j+1][i] = 2*(1 - p**2)*w[j][i] + (p**2)*(w[j][i+1] + w[j][i-1]) - w[j-1][i]
         
 '''
+Ec de ondas
+Eje1: 
+    f(x) = x(b-x)
+    g(x) = 0
+    b=5, d = 10, v=0.5, N=40, M=400 
 
 '''
 
