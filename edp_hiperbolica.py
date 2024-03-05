@@ -60,8 +60,8 @@ from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
 #definir coordenadas
-x = np.linspace(0, b, N+1)
-y = np.linspace(0, d, M+1)
+x = np.linspace(a, b, N+1)
+y = np.linspace(c, d, M+1)
 X, Y = np.meshgrid(x, y)
 Z = np.array(w)
 
