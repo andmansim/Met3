@@ -1,5 +1,7 @@
 #Edp hiperbólica
 import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 
 #Extremos de x, y
 a = 0
@@ -37,7 +39,7 @@ def g(x):
 for i in range(1, N):
     #Cambian dependiendo del ejercicio
     w[0][i] = f(h*i)
-    w[M][i] = w[0][i] + k*g(h*i)
+    w[1][i] = w[0][i] + k*g(h*i)
 
 for j in range(1, M):
     #Cambian dependiendo del ejercicio
@@ -49,7 +51,7 @@ for j in range(1, M):
 #recorremos los puntos interiores de la malla
 for i in range(1, N):
     for j in range(1, M):
-        w[j+1][i] = 2*(1 - p**2)*w[j][i] + (p**2)*(w[j][i+1] + w[j][i-1]) - w[j-1][i]
+        w[j+1][i] = 2*(1-p**2)*w[j][i] + (p**2)*(w[j][i+1] + w[j][i-1]) - w[j-1][i]
         
 '''
 Ec de ondas
@@ -61,10 +63,6 @@ Eje1:
 '''
 
 #Mostramos la grafica de la matriz
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-import numpy as np
-
 #definir coordenadas
 x = np.linspace(a, b, N+1)
 y = np.linspace(c, d, M+1)
