@@ -36,24 +36,24 @@ def g(x):
     return 0
 
 #Creamos los bordes de la matriz
-for i in range(1, N + 1):
+for i in range(1, N):
     #Cambian dependiendo del ejercicio
-    w[i,0] = f(a + h*i)
-    w[i,1] = w[i,0] + k * g(a + h*i)
+    w[i][0] = f(a + h*i)
+    w[i][1] = w[i][0] + k * g(a + h*i)
 
 for j in range(1, M):
     #Cambian dependiendo del ejercicio
-    w[0,j] = 0
-    w[N,j] = 0
+    w[0][j] = 0
+    w[N][j] = 0
 
 
 
 #recorremos los puntos interiores de la malla
-#for u in range(100):
-    for j in range(1, M):
-        for i in range(1, N):
-                w[i,j+1] = 2 *(1 - p**2) * w[i, j] + (p**2)*(w[i + 1, j] + w[i - 1, j]) - w[i,j-1]
-            
+
+for j in range(1, M):
+    for i in range(1, N):
+            w[i][j+1] = 2 *(1 - p**2) * w[i][j] + (p**2)*(w[i + 1][j] + w[i - 1][j]) - w[i][j-1]
+        
 '''
 hay una velocidad máxima, donde es h/k a partir de esta velocidad el método no es estable
 Siempre hay que calcularla para no pasarnos de ella
@@ -69,20 +69,20 @@ Eje2:
     f(x) = b-x   x > b/2
 
 Eje3:
-    g(x) = ns
+    g(x) = sen(x) b = pi
 '''
 
 #Mostramos la grafica de la matriz
 #definir coordenadas
-x = np.linspace(0, b, N + 1)
-y = np.linspace(0, d, M + 1)
+x = np.linspace(a, b, N + 1)
+y = np.linspace(b, d, M + 1)
 X, Y = np.meshgrid(x, y)
 
 
 #graficar
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
-ax.plot_surface(X, Y, w, cmap='viridis')
+ax.plot_surface(X, Y, w.T, cmap='viridis')#el .T es para que se adapte a los valores
 
 #etiquetas
 ax.set_xlabel('X')
