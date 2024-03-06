@@ -18,7 +18,7 @@ M = int(input("Ingrese el número de huecos de T: "))
 #Tamaño de los huecos
 h = (b-a)/N
 k = (d-c)/M 
-p = v*k/h #para no escribir todo esto abajo
+p = (v*k)/h #para no escribir todo esto abajo
 
 #Matriz
 # Inicializar matriz w con dimensiones N x M
@@ -38,8 +38,8 @@ def g(x):
 #Creamos los bordes de la matriz
 for i in range(1, N):
     #Cambian dependiendo del ejercicio
-    w[0][i] = f(h*i)
-    w[1][i] = w[0][i] + k*g(h*i)
+    w[0][i] = f(a + h*i)
+    w[1][i] = w[0][i] + k*g(a + h*i)
 
 for j in range(1, M):
     #Cambian dependiendo del ejercicio
@@ -49,10 +49,10 @@ for j in range(1, M):
 
 
 #recorremos los puntos interiores de la malla
-for u in range(100):
-    for i in range(1, N):
-        for j in range(1, M):
-            w[j+1][i] = 2*(1-p**2)*w[j][i] + (p**2)*(w[j][i+1] + w[j][i-1]) - w[j-1][i]
+#for u in range(100):
+    for j in range(1, M):
+        for i in range(1, N):
+                w[j+1][i] = 2*(1-p**2)*w[j][i] + (p**2)*(w[j][i+1] + w[j][i-1]) - w[j-1][i]
             
 '''
 Ec de ondas
