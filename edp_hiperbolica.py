@@ -31,11 +31,14 @@ w = np.zeros((N + 1, M + 1))
 def f(x):
     #Cambia dependiendo del ejercicio
     #x = (a+i*h)
-    return 0
+    if x <= 3 or x >= 1:
+        return 1
+    else:
+        return 0
 
 def g(x):  
     #Cambia dependiendo del ejercicio
-    return np.sin(x)
+    return 0
 
 #Creamos los bordes de la matriz
 for i in range(1, N):
@@ -72,6 +75,11 @@ Eje2:
 
 Eje3:
     g(x) = sen(x) b = pi
+
+Eje4:
+    f(x) = X[1,3] = 0   distinto de [1, 3]
+                    1   1 <= x <= 3 
+    b = 6, d = 24, N = 600, M = 2400 v = 0.5
 '''
 
 #Mostramos la grafica de la matriz
