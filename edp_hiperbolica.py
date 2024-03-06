@@ -32,10 +32,7 @@ w = np.zeros((N + 1, M + 1))
 def f(x):
     #Cambia dependiendo del ejercicio
     #x = (a+i*h)
-    if 1 <= x <= 3:
-        return 1
-    else:
-        return 0
+    return 0
 
 def g(x):  
     #Cambia dependiendo del ejercicio
@@ -89,7 +86,9 @@ Eje4:
     Las ondas se propagan siguiendo x = -vt, x = vt
 
 Eje5:
- 
+    Queremos formar ondas no estacionarias
+    f(x) = 0
+    g(x) = 0
 '''
 
 #Mostramos la grafica de la matriz
@@ -102,7 +101,7 @@ X, Y = np.meshgrid(x, y)
 #graficar
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
-ax.plot_surface(X, Y, w.T, cmap='viridis')#el .T es para que se adapte a los valores
+ax.plot_surface(X, Y, w.T, cmap='viridis') #el .T es para que se adapte a los valores
 
 #etiquetas
 ax.set_xlabel('X')
