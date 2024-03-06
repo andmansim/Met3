@@ -11,6 +11,7 @@ d = int(input("Ingrese el valor de d, tf: "))
 #velocidad
 v = float(input("Ingrese la velocidad: "))
 #Número de huecos de x, y. Los elegimos nosotros
+#Se puede poner 400 en uno y que no sean iguales
 N = int(input("Ingrese el número de huecos de X: "))
 M = int(input("Ingrese el número de huecos de T: "))
 
