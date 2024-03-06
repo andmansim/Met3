@@ -19,7 +19,7 @@ k = (d-c)/M
 
 #Matriz
 # Inicializar matriz w con dimensiones N x M
-w = [[0 for j in range(M+1)] for i in range(N+1)]
+w = np.zeros((N + 1, M + 1))
 
 
 #funcion
@@ -71,12 +71,11 @@ import numpy as np
 x = np.linspace(a, b, N+1)
 y = np.linspace(c, d, M+1)
 X, Y = np.meshgrid(x, y)
-Z = np.array(w)
 
 #graficar
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
-ax.plot_surface(X, Y, Z, cmap='viridis')
+ax.plot_surface(X, Y, w.T, cmap='viridis')
 
 #etiquetas
 ax.set_xlabel('X')
