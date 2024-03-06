@@ -5,16 +5,17 @@ from mpl_toolkits.mplot3d import Axes3D
 
 #Extremos de x, y
 a = 0
-b = int(input("Ingrese el valor de b, xf: "))
-b = np.pi 
+b = int(input("Ingrese el valor de b, xf: ")) 
 c = 0 
 d = int(input("Ingrese el valor de d, tf: "))
-#velocidad
-v = float(input("Ingrese la velocidad: "))
+
 #Número de huecos de x, y. Los elegimos nosotros
 #Se puede poner 400 en uno y que no sean iguales
 N = int(input("Ingrese el número de huecos de X: "))
 M = int(input("Ingrese el número de huecos de T: "))
+
+#velocidad
+v = float(input("Ingrese la velocidad: "))
 
 
 #Tamaño de los huecos
@@ -31,7 +32,7 @@ w = np.zeros((N + 1, M + 1))
 def f(x):
     #Cambia dependiendo del ejercicio
     #x = (a+i*h)
-    if x <= 3 or x >= 1:
+    if 1 <= x <= 3:
         return 1
     else:
         return 0
@@ -62,8 +63,10 @@ for j in range(1, M):
 '''
 hay una velocidad máxima, donde es h/k a partir de esta velocidad el método no es estable
 Siempre hay que calcularla para no pasarnos de ella
-Si no da algún dato --> es cero
+
 Ec de ondas
+
+Si no nos pone las condiciones iniciales ni de contorno --> se quedan como están
 Eje1: 
     f(x) = x(b-x)
     g(x) = 0
@@ -72,11 +75,14 @@ Eje1:
 Eje2:
     f(x) = x     x < b/2
     f(x) = b-x   x > b/2
+    g(x) = 0
 
 Eje3:
     g(x) = sen(x) b = pi
+    f(x) = 0
 
 Eje4:
+    g(x)= 0
     f(x) = X[1,3] = 0   distinto de [1, 3]
                     1   1 <= x <= 3 
     b = 6, d = 24, N = 600, M = 2400 v = 0.5
