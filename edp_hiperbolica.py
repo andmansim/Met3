@@ -86,6 +86,10 @@ Eje4:
     f(x) = X[1,3] = 0   distinto de [1, 3]
                     1   1 <= x <= 3 
     b = 6, d = 24, N = 600, M = 2400 v = 0.5
+    Las ondas se propagan siguiendo x = -vt, x = vt
+
+Eje5:
+ 
 '''
 
 #Mostramos la grafica de la matriz
