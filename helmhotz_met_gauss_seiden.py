@@ -1,5 +1,5 @@
 #metodo de Gauss-Seiden
-
+import numpy as np
 #Extremos de x, y
 a = int(input("Ingrese el valor de a, x0: "))
 b = int(input("Ingrese el valor de b, xf: "))
