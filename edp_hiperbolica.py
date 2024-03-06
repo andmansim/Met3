@@ -6,6 +6,7 @@ from mpl_toolkits.mplot3d import Axes3D
 #Extremos de x, y
 a = 0
 b = int(input("Ingrese el valor de b, xf: "))
+b = np.pi 
 c = 0 
 d = int(input("Ingrese el valor de d, tf: "))
 #velocidad
@@ -30,11 +31,11 @@ w = np.zeros((N + 1, M + 1))
 def f(x):
     #Cambia dependiendo del ejercicio
     #x = (a+i*h)
-    return x * (b - x)
+    return 0
 
 def g(x):  
     #Cambia dependiendo del ejercicio
-    return 0
+    return np.sin(x)
 
 #Creamos los bordes de la matriz
 for i in range(1, N):
