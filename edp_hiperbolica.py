@@ -46,7 +46,7 @@ for i in range(1, N):
 
 for j in range(1, M):
     #Cambian dependiendo del ejercicio
-    w[0][j] = 0
+    w[0][j] = np.sin(j * k)
     w[N][j] = 0
 
 
@@ -89,6 +89,7 @@ Eje5:
     Queremos formar ondas no estacionarias
     f(x) = 0
     g(x) = 0
+    w[0][j] = 3*sin(k*j) 
 '''
 
 #Mostramos la grafica de la matriz
