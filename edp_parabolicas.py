@@ -65,6 +65,8 @@ Eje1:
     M = 400
     v = 0.4
     A partir de 0.5 el programa casca
+    Cuando aumentamos la conductividad el calor se propaga más rápido y cuando disminuimos
+    la conductividad el calor se propaga más lento y se preserva más tiempo
 '''
 
 #Mostramos la grafica de la matriz
