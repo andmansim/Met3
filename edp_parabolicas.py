@@ -56,7 +56,7 @@ for j in range(0, M):
         
 '''
 La v es alfa de la teoría. Se le dan valores entre 0.2 y 1.5 pq también tenemos 
-velocidad maxima (velocidad de propagacion)
+velocidad maxima (velocidad de propagacion) --> <= h/(2k)**(1/2)
 Eje1:
     f(x) = e**-(x-b/2)**2
     b = 5 
@@ -64,7 +64,7 @@ Eje1:
     N = 40
     M = 400
     v = 0.4
-    A partir de 0.5 el programa kk por valores muy altos
+    A partir de 0.55 el programa kk por valores muy altos
     Cuando aumentamos la conductividad el calor se propaga más rápido y cuando disminuimos
     la conductividad el calor se propaga más lento y se preserva más tiempo
 '''
