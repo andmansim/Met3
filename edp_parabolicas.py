@@ -32,7 +32,7 @@ w = np.zeros((N + 1, M + 1))
 def f(x):
     #Cambia dependiendo del ejercicio
     #x = (a+i*h)
-    return 0
+    return np.exp(-((a+ i*h)-b/2)**2)
 
 
 #Creamos los bordes de la matriz
@@ -55,7 +55,8 @@ for j in range(1, M):
             w[i][j+1] = (1-2*k*v**2/h**2)*w[i][j] + (k*v**2/h**2)*(w[i+1][j] + w[i-1][j]) 
         
 '''
-La v es alfa de la teoría
+La v es alfa de la teoría. Se le dan valores entre 0.2 y 1.5 paq también tenemos 
+velocidad maxima (velocidad de propagacion)
 Eje1:
     f(x) = e**-(x-b/2)**2
     b = 5 
