@@ -31,13 +31,13 @@ w = np.zeros((N + 1, M + 1))
 #funcion inicial y de frontera
 def f(x):
     #Cambia dependiendo del ejercicio
-    #x = (a+i*h)
-    return np.exp(-((a+ i*h)-b/2)**2)
+    return np.exp(-(x-b/2)**2)
 
 
 #Creamos los bordes de la matriz
 for i in range(1, N):
     #Cambian dependiendo del ejercicio
+    #x = (a+i*h)
     w[i][0] = f(a + h*i)
     w[i][1] = 0
 
@@ -50,12 +50,12 @@ for j in range(1, M):
 
 #recorremos los puntos interiores de la malla
 
-for j in range(1, M):
+for j in range(0, M):
     for i in range(1, N):
             w[i][j+1] = (1-2*k*v**2/h**2)*w[i][j] + (k*v**2/h**2)*(w[i+1][j] + w[i-1][j]) 
         
 '''
-La v es alfa de la teoría. Se le dan valores entre 0.2 y 1.5 paq también tenemos 
+La v es alfa de la teoría. Se le dan valores entre 0.2 y 1.5 pq también tenemos 
 velocidad maxima (velocidad de propagacion)
 Eje1:
     f(x) = e**-(x-b/2)**2
@@ -63,7 +63,8 @@ Eje1:
     d = 10
     N = 40
     M = 400
-    v = 
+    v = 0.4
+    A partir de 0.5 el programa casca
 '''
 
 #Mostramos la grafica de la matriz
