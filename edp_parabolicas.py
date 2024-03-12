@@ -64,7 +64,7 @@ Eje1:
     N = 40
     M = 400
     v = 0.4
-    A partir de 0.5 el programa casca
+    A partir de 0.5 el programa kk por valores muy altos
     Cuando aumentamos la conductividad el calor se propaga más rápido y cuando disminuimos
     la conductividad el calor se propaga más lento y se preserva más tiempo
 '''
