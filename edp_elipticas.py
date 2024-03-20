@@ -1,4 +1,5 @@
 #metodo de Gauss-Seiden
+#Diferencias regresivas (un metodo de diferencias finitas)
 import numpy as np
 #Extremos de x, y
 a = int(input("Ingrese el valor de a, x0: "))
@@ -48,6 +49,31 @@ for o in range(100):#iteramos inicialmente 100, luego ya lo adapataremos
         for j in range(1, M):
             w[i][j] = ( k**2 * (w[i+1][j] + w[i-1][j])+ h**2 * (w[i][j+1] + w[i][j-1]) - (h*k)**2 * f(i, j))/(2*(h**2 + k**2))
             
+
+#Mostramos la grafica de la matriz
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+
+#definir coordenadas
+x = np.linspace(a, b, N+1)
+y = np.linspace(c, d, M+1)
+X, Y = np.meshgrid(x, y)
+
+
+#graficar
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X, Y, w.T, cmap='viridis')
+
+#etiquetas
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+
+#mostramos
+plt.show()
+
 '''
 Nos va a preguntar la interpretación gráfica de las EDP
 El laplaciano minimiza la energía, es decir, el calor se va a ir a los bordes. 
@@ -82,28 +108,3 @@ u(0,y) = 0, u(pi,y) = 0
 u(x,0) = y, u(x,pi) = y
 
 '''
-
-#Mostramos la grafica de la matriz
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-import numpy as np
-
-#definir coordenadas
-x = np.linspace(a, b, N+1)
-y = np.linspace(c, d, M+1)
-X, Y = np.meshgrid(x, y)
-
-
-#graficar
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
-ax.plot_surface(X, Y, w.T, cmap='viridis')
-
-#etiquetas
-ax.set_xlabel('X')
-ax.set_ylabel('Y')
-ax.set_zlabel('Z')
-
-#mostramos
-plt.show()
-

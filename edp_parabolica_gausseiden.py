@@ -1,5 +1,6 @@
 #met de diferencias regresivas (un met de diferencias finitas)
 #Teoría lo tiene ANA
+#Es cuando tenemos j
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -56,10 +57,7 @@ for l in range(100):
     for j in range(0, M):
         for i in range(1, N):
                 w[i][j] = (lam * (w[i][j+1] + w[i][j-1]) + w[i][j-1])/ (1+2 * lam)
-        
-'''
-La v es alfa de la teoría. Se le dan valores entre 0.2 y 1.5 pq también tenemos 
-'''
+
 
 #Mostramos la grafica de la matriz
 #definir coordenadas
@@ -81,3 +79,7 @@ ax.set_zlabel('Z')
 #mostramos
 plt.show()
 
+        
+'''
+La v es alfa de la teoría. Se le dan valores entre 0.2 y 1.5 pq también tenemos 
+'''

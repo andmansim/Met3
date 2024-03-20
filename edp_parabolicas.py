@@ -1,4 +1,6 @@
 #met de diferencias progresivas (un met de diferencias finitas)
+#es prog cuando tenemos j+1
+#Ec del Calor
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -55,20 +57,7 @@ for j in range(0, M):
     for i in range(1, N):
             w[i][j+1] = (1-2*k*v**2/h**2)*w[i][j] + (k*v**2/h**2)*(w[i+1][j] + w[i-1][j]) 
         
-'''
-La v es alfa de la teoría. Se le dan valores entre 0.2 y 1.5 pq también tenemos 
-velocidad maxima (velocidad de propagacion) --> <= h/(2k)**(1/2)
-Eje1:
-    f(x) = e**-(x-b/2)**2
-    b = 5 
-    d = 10
-    N = 40
-    M = 400
-    v = 0.4
-    A partir de 0.55 el programa kk por valores muy altos
-    Cuando aumentamos la conductividad el calor se propaga más rápido y cuando disminuimos
-    la conductividad el calor se propaga más lento y se preserva más tiempo
-'''
+
 
 #Mostramos la grafica de la matriz
 #definir coordenadas
@@ -90,3 +79,17 @@ ax.set_zlabel('Z')
 #mostramos
 plt.show()
 
+'''
+La v es alfa de la teoría. Se le dan valores entre 0.2 y 1.5 pq también tenemos 
+velocidad maxima (velocidad de propagacion) --> <= h/(2k)**(1/2)
+Eje1:
+    f(x) = e**-(x-b/2)**2
+    b = 5 
+    d = 10
+    N = 40
+    M = 400
+    v = 0.4
+    A partir de 0.55 el programa kk por valores muy altos
+    Cuando aumentamos la conductividad el calor se propaga más rápido y cuando disminuimos
+    la conductividad el calor se propaga más lento y se preserva más tiempo
+'''

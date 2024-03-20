@@ -1,4 +1,6 @@
 #Edp hiperbólica
+#Diferencias progresivas (diferencias finitas)
+#Ec de Ondas
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -57,6 +59,28 @@ for j in range(1, M):
     for i in range(1, N):
             w[i][j+1] = 2 *(1 - p**2) * w[i][j] + (p**2)*(w[i + 1][j] + w[i - 1][j]) - w[i][j-1]
         
+
+
+#Mostramos la grafica de la matriz
+#definir coordenadas
+x = np.linspace(a, b, N + 1)
+y = np.linspace(b, d, M + 1)
+X, Y = np.meshgrid(x, y)
+
+
+#graficar
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X, Y, w.T, cmap='viridis') #el .T es para que se adapte a los valores
+
+#etiquetas
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+
+#mostramos
+plt.show()
+
 '''
 hay una velocidad máxima, donde es h/k a partir de esta velocidad el método no es estable
 Siempre hay que calcularla para no pasarnos de ella
@@ -91,24 +115,3 @@ Eje5:
     g(x) = 0
     w[0][j] = 3*sin(k*j) 
 '''
-
-#Mostramos la grafica de la matriz
-#definir coordenadas
-x = np.linspace(a, b, N + 1)
-y = np.linspace(b, d, M + 1)
-X, Y = np.meshgrid(x, y)
-
-
-#graficar
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
-ax.plot_surface(X, Y, w.T, cmap='viridis') #el .T es para que se adapte a los valores
-
-#etiquetas
-ax.set_xlabel('X')
-ax.set_ylabel('Y')
-ax.set_zlabel('Z')
-
-#mostramos
-plt.show()
-

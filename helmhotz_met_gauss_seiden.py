@@ -1,4 +1,6 @@
 #metodo de Gauss-Seiden
+#Diferencias regresivas (un metodo de diferencias finitas)
+
 import numpy as np
 #Extremos de x, y
 a = int(input("Ingrese el valor de a, x0: "))
@@ -49,18 +51,7 @@ for o in range(100):#iteramos inicialmente 100, luego ya lo adapataremos
         for j in range(1, M):
             w[i][j] = ( k**2 * (w[i+1][j] + w[i-1][j])+ h**2 * (w[i][j+1] + w[i][j-1]) - (h*k)**2 * f(i, j))/(2*(h**2 + k**2) + (k*k*l)**2)
             
-'''
-Tenemos que modificar la wij, la función va a seguir = 0. 
 
-Eje3: ec de Helmhotz, l es lambda
-Au + lu = 0 0<x<1, 0<y<1, da igual si pones lu a un lado o al otro
-u(0,y) = 0, u(1,y) = 1
-u(x,0) = 0, u(x,1) = 0
-l = 1
-l = 300
-l = 1000 
-
-'''
 
 #Mostramos la grafica de la matriz
 import matplotlib.pyplot as plt
@@ -84,4 +75,17 @@ ax.set_zlabel('Z')
 
 #mostramos
 plt.show()
+
+'''
+Tenemos que modificar la wij, la función va a seguir = 0. 
+
+Eje3: ec de Helmhotz, l es lambda
+Au + lu = 0 0<x<1, 0<y<1, da igual si pones lu a un lado o al otro
+u(0,y) = 0, u(1,y) = 1
+u(x,0) = 0, u(x,1) = 0
+l = 1
+l = 300
+l = 1000 
+
+'''
 
