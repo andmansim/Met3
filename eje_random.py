@@ -7,9 +7,9 @@ from mpl_toolkits.mplot3d import Axes3D
 
 
 #Extremos de x, y
-a = 0
+a = int(input("Ingrese el valor de a, xi: "))
 b = int(input("Ingrese el valor de b, xf: ")) 
-c = 0 
+c = int(input("Ingrese el valor de c, ti: "))
 d = int(input("Ingrese el valor de d, tf: "))
 
 #Número de huecos de x, y. Los elegimos nosotros
@@ -54,9 +54,9 @@ for j in range(1, M):
 
 #recorremos los puntos interiores de la malla
 for l in range(100):
-    for j in range(0, M):
+    for j in range(1, M):
         for i in range(1, N):
-                w[i][j] = (h * (w[i][j+1] + w[i][j-1]) + w[i][j-1])/ (1+2 * lam)
+                w[i][j] = ((k/h**2) * (w[i+1][j] + w[i-1][j]) + w[i][j-1]*(1 + h*1))/ (1 + h*i + 2* (k/h**2))
 
 
 #Mostramos la grafica de la matriz
@@ -82,5 +82,11 @@ plt.show()
         
 '''
 La v es alfa de la teoría. Se le dan valores entre 0.2 y 1.5 pq también tenemos 
+
+uxx -(1 + h*i)ut = 0
+u(x,0) = e^-(x-2.5)**2 --> Esto se pone en f(x), en u(x,0) = f(a+h*i)
+u(0,t) = u(5,t) = 0
+x = (0,5)
+t = (0,5)
 
 '''

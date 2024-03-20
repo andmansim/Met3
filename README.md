@@ -12,3 +12,5 @@ Evolución es cuando despejamos wij+1
 
 Si no dice nada por el met que queramos, si hay dos opciones el nos puede indicar una. 
 Hay que explicar que pasa según lo que nos salga. 
+Nos puede pedir las caractirísticas de la EDP, o indicar que características está siguiendo. 
+Evolucion para las hiperbólicas y algunas parabólicas
