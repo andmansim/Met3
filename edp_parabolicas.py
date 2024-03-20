@@ -1,4 +1,5 @@
 #met de diferencias progresivas (un met de diferencias finitas)
+#Lo ha tratado como un problema de evolución
 #es prog cuando tenemos j+1
 #Ec del Calor
 import numpy as np
