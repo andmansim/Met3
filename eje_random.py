@@ -7,9 +7,9 @@ from mpl_toolkits.mplot3d import Axes3D
 
 
 #Extremos de x, y
-a = int(input("Ingrese el valor de a, xi: "))
+a = 0
 b = int(input("Ingrese el valor de b, xf: ")) 
-c = int(input("Ingrese el valor de c, ti: "))
+c = 0
 d = int(input("Ingrese el valor de d, tf: "))
 
 #Número de huecos de x, y. Los elegimos nosotros
@@ -56,7 +56,8 @@ for j in range(1, M):
 for l in range(100):
     for j in range(1, M):
         for i in range(1, N):
-                w[i][j] = ((k/h**2) * (w[i+1][j] + w[i-1][j]) + w[i][j-1]*(1 + h*1))/ (1 + h*i + 2* (k/h**2))
+                #w[i][j] = (lam*(w[i][j+1] + w[i][j-1]) + w[i][j-1]/(1+2*lam)
+                w[i][j] = ((k/h**2) * (w[i+1][j] + w[i-1][j]) + w[i][j-1]*(1+h*i))/(1+h*i+2*(k/h**2))
 
 
 #Mostramos la grafica de la matriz
