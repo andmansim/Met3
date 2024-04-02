@@ -1,4 +1,4 @@
-#Edp hiperbólica
+#Edp eliptica
 #Diferencias progresivas (diferencias finitas)
 #Ec de Ondas
 import numpy as np

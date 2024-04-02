@@ -1,5 +1,6 @@
 #metodo de Gauss-Seiden
 #Diferencias regresivas (un metodo de diferencias finitas)
+#ec poisson
 import numpy as np
 #Extremos de x, y
 a = int(input("Ingrese el valor de a, x0: "))
