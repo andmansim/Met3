@@ -35,7 +35,7 @@ w = np.zeros((N + 1, M + 1))
 #funcion inicial y de frontera
 def f(x):
     #Cambia dependiendo del ejercicio
-    return np.exp(-(x-2.5)**2)
+    return np.exp(-(x-b/2)**2)
 
 
 #Creamos los bordes de la matriz
@@ -56,10 +56,11 @@ for j in range(1, M):
 for l in range(100):
     for j in range(1, M):
         for i in range(1, N):
-                # base w[i][j] = (lam*(w[i][j+1] + w[i][j-1]) + w[i][j-1]/(1+2*lam)
-                #eje 1 w[i][j] = ((k/h**2) * (w[i+1][j] + w[i-1][j]) + w[i][j-1]*(1+h*i))/(1+h*i+2*(k/h**2))
-                # eje 2 w[i][j] = (k*(w[i+1][j] + w[i-1][j]) + h**2*(1+h*i)*w[i][j-1])/(-h**2*k+2*k+h**2*(1+h*i))
-                w[i][j] = ((k/h**2)*(w[i+1][j] + w[i-1][j]) + (1+h*i)*w[i][j-1])/(-i*k*h+2*(k/h**2)+(1+h*i))
+            # base w[i][j] = (lam*(w[i][j+1] + w[i][j-1]) + w[i][j-1]/(1+2*lam)
+            #eje 1 w[i][j] = ((k/h**2) * (w[i+1][j] + w[i-1][j]) + w[i][j-1]*(1+h*i))/(1+h*i+2*(k/h**2))
+            # eje 2 w[i][j] = (k*(w[i+1][j] + w[i-1][j]) + h**2*(1+h*i)*w[i][j-1])/(-h**2*k+2*k+h**2*(1+h*i))
+            w[i][j] = (-k*(w[i+1][j] + w[i-1][j]) - (h**2)*(1+h*i)*w[i][j-1])/(-2*k + k*(h**3)*i - (h**2)*(1+h*i))
+print(w[i][j])
 #Mostramos la grafica de la matriz
 #definir coordenadas
 x = np.linspace(a, b, N + 1)
