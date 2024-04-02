@@ -27,3 +27,4 @@ En este caso el paso 2 cambia.
 Después de plantear la ec discretizada hemos visto dos met en hiperbolicas. 
 La matriz del met de gauss la sacamos de las ecuaciones. Tenemos una incognita y ec. para cada punto de la malla donde cada una es distinta pq los subindices son distintos. Todas las ec son lineales. 
 
+Met de gauss es despejar la coord principal en funcion de las otras, lo de seidel es iterar usando las más recientes
