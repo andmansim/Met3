@@ -1,6 +1,8 @@
 # Met3
 https://github.com/andmansim/Met3.git
 
+REVISAR APUNTES ESTOS Y MIRAR CON EJES HECHOS EN EL CUARDERNO
+
 En el examen tenemos que hacer todos los pasos. Él nos dice si es regresivo o progresivo, pero nosotros lo ponemos en función de w y despejamos el q toque. 
 Regresivo despejamps wij (Gauss-Seidel)
 Progresivo despejamos wij+1 (Evolución o Gauss)
