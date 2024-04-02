@@ -24,4 +24,6 @@ Progresiva, cogemos el valor a posteriori. No hace falta aplicar gauss seidel da
 Regresiva, las usamos para cambiar la edp donde aprox lo que vale la solu pero en j-1, donde aquí cambia un poco dado que ahora vamos hacia atrás. No tenemos ningún punto posterior dado que obtenemos 3 en un mismo timpo temporal --> se resuelve todo con gauss seidel, iterando y convergiendo la solución cada vez que lo hacemos. Todo esto es un sist lineal donde el punto central de la dig prin es el ij 
 En este caso el paso 2 cambia. 
 
-Después de plantear la ec discretizada hemos visto dos met en hiperbolicas, 
+Después de plantear la ec discretizada hemos visto dos met en hiperbolicas. 
+La matriz del met de gauss la sacamos de las ecuaciones. Tenemos una incognita y ec. para cada punto de la malla donde cada una es distinta pq los subindices son distintos. Todas las ec son lineales. 
+
