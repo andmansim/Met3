@@ -29,4 +29,5 @@ La matriz del met de gauss la sacamos de las ecuaciones. Tenemos una incognita y
 
 Met de gauss es despejar la coord principal en funcion de las otras, lo de seidel es iterar usando las más recientes. 
 
+# Examen 10/04/2024
 EN el control 10/04/2024 discretizamos, cambiamos derivadas, saber cómo resolverlo si como GS o ec Evolución, progreamarlo y resolverlo. LE mandaremos el prog y la imagen. 
