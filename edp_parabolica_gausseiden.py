@@ -60,6 +60,7 @@ for l in range(100):
             #eje 1 w[i][j] = ((k/h**2) * (w[i+1][j] + w[i-1][j]) + w[i][j-1]*(1+h*i))/(1+h*i+2*(k/h**2))
             # eje 2 w[i][j] = (k*(w[i+1][j] + w[i-1][j]) + h**2*(1+h*i)*w[i][j-1])/(-h**2*k+2*k+h**2*(1+h*i))
             w[i][j] = (-k*(w[i+1][j] + w[i-1][j]) - (h**2)*(1+h*i)*w[i][j-1])/(-2*k + k*(h**3)*i - (h**2)*(1+h*i))
+            
 print(w[i][j])
 #Mostramos la grafica de la matriz
 #definir coordenadas
