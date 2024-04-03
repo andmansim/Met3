@@ -3,17 +3,16 @@
 #ec poisson
 import numpy as np
 #Extremos de x, y
-a = int(input("Ingrese el valor de a, x0: "))
-b = int(input("Ingrese el valor de b, xf: "))
-c = int(input("Ingrese el valor de c, y0: "))
-d = int(input("Ingrese el valor de d, yf: "))
+a = float(input("Ingrese el valor de a, x0: "))
+b = float(input("Ingrese el valor de b, xf: "))
+c = float(input("Ingrese el valor de c, y0: "))
+d = float(input("Ingrese el valor de d, yf: "))
 
 #Número de huecos de x, y. Los elegimos nosotros
 N = int(input("Ingrese el número de huecos de X: "))
 M = int(input("Ingrese el número de huecos de Y: "))
 
-b = np.pi
-d = np.pi
+
 #Tamaño de los huecos
 h = (b-a)/N
 k = (d-c)/M 
@@ -49,7 +48,8 @@ for o in range(100):#iteramos inicialmente 100, luego ya lo adapataremos
     for i in range(1, N):
         for j in range(1, M):
             #w[i][j] = ( k**2 * (w[i+1][j] + w[i-1][j])+ h**2 * (w[i][j+1] + w[i][j-1]) - (h*k)**2 * f(i, j))/(2*(h**2 + k**2))
-            w[i][j] = ((h/8*k)*(-w[i-1][j+1] - w[i+1][j-1] + w[i+1][j+1] + w[i-1][j-1])) + ((w[i+1][j] + w[i-1][j])/2)
+            w[i][j] = ((h/(8*k))*(-w[i-1][j+1] - w[i+1][j-1] + w[i+1][j+1] + w[i-1][j-1])) + ((w[i+1][j] + w[i-1][j])/2)
+print(w[i][j])
 
 #Mostramos la grafica de la matriz
 import matplotlib.pyplot as plt
