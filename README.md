@@ -46,3 +46,7 @@ Este método se aplica en la resolución de sistemas de ecuaciones lineales en p
 
 # Examen 10/04/2024
 EN el control 10/04/2024 discretizamos, cambiamos derivadas, saber cómo resolverlo si como GS o ec Evolución, progreamarlo y resolverlo. LE mandaremos el prog y la imagen. 
+
+# Discretizar en hiperbólicas
+aplicamos el polinomio de Taylor en varios puntos, (i+1, j+1), (i+1, j-1), (i-1, j-1), (i-1, j+1). Después lo que hacemos es sumar todas las ecuaciones que obteníamos para obtener la derivada cruzada sola y sin nada más. No hace falta hacer el proceso entero, con aprenderse la fórmula final vale. 
+Después sustituimos la derivada cruzada en la edp y transformamos las cosas en w, después lo hacemos por gauss-seidel, no se puede hacer de evolución --> no es progresiva. Dado que calculamos puntos en un entorno cerrado. 
