@@ -1,5 +1,4 @@
 #metodo de Gauss-Seiden
-#Diferencias regresivas (un metodo de diferencias finitas)
 
 import numpy as np
 #Extremos de x, y

@@ -31,5 +31,18 @@ La matriz del met de gauss la sacamos de las ecuaciones. Tenemos una incognita y
 
 Met de gauss es despejar la coord principal en funcion de las otras, lo de seidel es iterar usando las más recientes. 
 
+Diferencias finitas progresivas:
+
+Si se despeja el valor en el punto siguiente (wij+1) en función de los valores anteriores, se denomina método de diferencias finitas progresivas.
+Este enfoque se utiliza en problemas donde la solución en un punto depende de los valores previos, común en ecuaciones de tipo evolutivo como las ecuaciones de ondas.
+Diferencias finitas regresivas:
+
+Cuando se despeja el valor en el punto anterior (wij-1) en función de los valores posteriores, se trata de un método de diferencias finitas regresivas.
+Este método se emplea en problemas donde la solución en un punto depende de los valores futuros, por ejemplo, en ciertos casos de ecuaciones evolutivas.
+Método de Gauss-Seidel:
+
+En el método de Gauss-Seidel, se actualiza el valor actual (wij) utilizando los valores anteriores y posteriores en un proceso iterativo para converger hacia la solución.
+Este método se aplica en la resolución de sistemas de ecuaciones lineales en problemas estacionarios como la ecuación de Poisson.
+
 # Examen 10/04/2024
 EN el control 10/04/2024 discretizamos, cambiamos derivadas, saber cómo resolverlo si como GS o ec Evolución, progreamarlo y resolverlo. LE mandaremos el prog y la imagen. 
