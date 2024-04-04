@@ -40,7 +40,7 @@ Diferencias finitas regresivas:
 # método de diferencias finitas regresivas
 Cuando se despeja el valor en el punto anterior (wij-1) en función de los valores posteriores, se trata de un método de diferencias finitas regresivas.
 Este método se emplea en problemas donde la solución en un punto depende de los valores futuros, por ejemplo, en ciertos casos de ecuaciones evolutivas.
-Método de Gauss-Seidel:
+
 
 # método de Gauss-Seidel
 se actualiza el valor actual (wij) utilizando los valores anteriores y posteriores en un proceso iterativo para converger hacia la solución.
