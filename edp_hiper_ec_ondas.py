@@ -34,7 +34,11 @@ w = np.zeros((N + 1, M + 1))
 def f(x):
     #Cambia dependiendo del ejercicio
     #x = (a+i*h)
-    return 0
+    if 1 <= x and x <= 3:
+        return 1
+    else:
+        return 0
+     
 
 def g(x):  
     #Cambia dependiendo del ejercicio
@@ -44,11 +48,11 @@ def g(x):
 for i in range(1, N):
     #Cambian dependiendo del ejercicio
     w[i][0] = f(a + h*i)
-    w[i][1] = w[i][0] + k * g(a + h*i)
+    w[i][1] = 0
 
 for j in range(1, M):
     #Cambian dependiendo del ejercicio
-    w[0][j] = np.sin(j * k)
+    w[0][j] = 0
     w[N][j] = 0
 
 
