@@ -23,23 +23,23 @@ w = np.zeros((N + 1, M + 1))
 
 
 #funcion
-def f(i, j):
+def f(x):
     #las x = (a+i*h)
     #las y = (c+j*k)
-    return (a+i*h)*(c+j*k)*(1-(a+i*h))*(1-(c+j*k))
+    return 10*x*(1-x)
 
 #Creamos los bordes de la matriz
 for i in range(1, N):
     #Cambian dependiendo del ejercicio
     #las x = (a+i*h)
-    w[i][0] = 0
-    w[i][M] = 0
+    w[i][0] = f(a+i*h)
+    w[i][M] = -5
 
 for j in range(1, M):
     #Cambian dependiendo del ejercicio
     #las y = (c+j*k)
-    w[0][j] = 0
-    w[N][j] = 0
+    w[0][j] = 5*(k*j + c)
+    w[N][j] = 5* np.sin(2*np.pi*(k*j + c))
 
 
 
@@ -51,10 +51,11 @@ for o in range(100):#iteramos inicialmente 100, luego ya lo adapataremos
             #w[i][j] = ((h/(8*k))*(-w[i-1][j+1] - w[i+1][j-1] + w[i+1][j+1] + w[i-1][j-1])) + ((w[i+1][j] + w[i-1][j])/2)
             #w[i][j] = ((k*h)*(-w[i-1][j+1] - w[i+1][j-1] + w[i+1][j+1] + w[i-1][j-1]) + (4*h**2)*(w[i][j+1] + w[i][j-1]) + (4*k**2)*(w[i+1][j] + w[i-1][j]))/(8*h**2+8*k**2)
             #w[i][j] = ((k*h)*(-w[i-1][j+1] - w[i+1][j-1] + w[i+1][j+1] + w[i-1][j-1]) + (2*h**2)*(w[i][j+1] + w[i][j-1]) + (2*k**2)*(w[i+1][j] + w[i-1][j]))/(4*h**2+4*k**2)
-            w[i][j] = ( k**2 * (w[i+1][j] + w[i-1][j])+ (h**2) * (w[i][j+1] + w[i][j-1])-f(i,j))/(2*(h**2 + k**2))
+            #w[i][j] = ( k**2 * (w[i+1][j] + w[i-1][j])+ (h**2) * (w[i][j+1] + w[i][j-1])-f(i,j))/(2*(h**2 + k**2))
+            w[i][j] = ( (k*j-1)*(k**2)*(w[i+1][j]+w[i-1][j]) - (i*h**3)*(w[i][j+1]+w[i][j-1]) )/(2*((k*j-1)*(k**2) - i*h**3)) 
 print(w[i][j])
 
-#Mostramos la grafica de la matriz
+#Mostramos la gráfica de la matriz
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
@@ -80,7 +81,7 @@ plt.show()
 
 '''
 Nos va a preguntar la interpretación gráfica de las EDP
-El laplaciano minimiza la energía, es decir, el calor se va a ir a los bordes. 
+El laplaciano minimiza la energía, haciendo que la tensión sea mínima. 
 Un ejemplo de esto es una lona estirada, donde al tensionar dandole una forma no horizontal, 
 esta se quede da una forma que minimiza la energía. 
 Las series de fourier extendienden la solución, hay que tener cuidadito. 
