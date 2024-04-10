@@ -34,19 +34,24 @@ w = np.zeros((N + 1, M + 1))
 def f(x):
     #Cambia dependiendo del ejercicio
     #x = (a+i*h)
-    dreturn 10*x*(5-x)
+    #return 10*x*(5-x)
+    if 1 < x < 3:
+        return 1
+    else:
+        return 0
 
 
 def g(x):  
     #Cambia dependiendo del ejercicio
-    return (250/4) - 10*x*(5-x)
+    #return (250/4) - 10*x*(5-x)
+    return 0
     
 
 #Creamos los bordes de la matriz
 for i in range(1, N):
     #Cambian dependiendo del ejercicio
     w[i][0] = f(a + i*h)
-    w[i][M] = w[i][0] + k*g(a + h*i)
+    w[i][1] = w[i][0] + k*g(a + h*i)
 
 for j in range(1, M):
     #Cambian dependiendo del ejercicio
@@ -61,7 +66,7 @@ for j in range(1, M):
     for i in range(1, N):
             w[i][j+1] = 2 *(1 - p**2) * w[i][j] + (p**2)*(w[i + 1][j] + w[i - 1][j]) - w[i][j-1]
             
-        
+print(w[i][j])    
 
 
 #Mostramos la grafica de la matriz
