@@ -34,17 +34,13 @@ w = np.zeros((N + 1, M + 1))
 def f(x):
     #Cambia dependiendo del ejercicio
     #x = (a+i*h)
-    #return 10*x*(5-x)
-    if 1<= x <= 3:
-        return 1
-    else:
-        return 0
-     
+    dreturn 10*x*(5-x)
+
 
 def g(x):  
     #Cambia dependiendo del ejercicio
-    #return (250/4) - 10*x*(5-x)
-    return 0
+    return (250/4) - 10*x*(5-x)
+    
 
 #Creamos los bordes de la matriz
 for i in range(1, N):
